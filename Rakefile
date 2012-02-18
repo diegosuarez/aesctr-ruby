@@ -17,7 +17,7 @@ Jeweler::Tasks.new do |gem|
   gem.name = "aesctr-ruby"
   gem.homepage = "http://github.com/diegosuarez/aesctr-ruby"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: AES in counter mode for ruby}
+  gem.summary = %Q{AES in counter mode for ruby}
   gem.description = "La descripcion del resumen ya dice lo que hay :)"
   gem.email = "diego.suargarcia@gmail.com"
   gem.authors = ["Diego Suarez"]
