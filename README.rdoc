@@ -4,21 +4,16 @@ Aunque puede que se deba a lo torpe que soy, tras mucho buscar no he encontrado 
 
 Personalmente, decidi hacer el port en vez de usar otra de las implementaciones de AES por la sencilla razon de que necesitaba interoperabilidad con servicios web que utilizaban la implementacion de PHP citada.
 
-== Uso
-Simple:
-	require 'aesctr-ruby'
+== Uso:
 
+Dead-simple:
 
-	plain= "Hola mundo del cifrado!"
-
-	pass = "contrasena"
-
-	puts "Cadena original:"+plain
-
-	puts "Contrasena:"+pass
-
-	puts "Cadena cifrada y descifrada: "+AesCtr.decrypt(AesCtr.encrypt(plain, pass, 256), pass, 256)
-
+  require 'aesctr-ruby'
+  plain= "Hola mundo del cifrado!"
+  pass = "contrasena"
+  puts "Cadena original:"+plain
+  puts "Contrasena:"+pass
+  puts "Cadena cifrada y descifrada: "+AesCtr.decrypt(AesCtr.encrypt(plain, pass, 256), pass, 256)
 
 Dos funciones principales, AesCtr.crypt y AesCtr.decrypt. Los parametros son el texto, la contraseña de cifrado, y el numero de bits a usar (128|192|256). "encrypt" devuelve cifrado el texto (y codificado en base64 para evitar problemas) y decrypt toma el texto cifrado (en base64 tb) y devuelve el original.
 
