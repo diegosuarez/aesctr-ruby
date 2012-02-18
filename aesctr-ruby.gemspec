@@ -24,6 +24,7 @@ Gem::Specification.new do |s|
     "README.rdoc",
     "Rakefile",
     "VERSION",
+    "aesctr-ruby.gemspec",
     "lib/aesctr-ruby.rb",
     "test/helper.rb",
     "test/test_aesctr-ruby.rb"
