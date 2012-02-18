@@ -17,10 +17,10 @@ Jeweler::Tasks.new do |gem|
   gem.name = "aesctr-ruby"
   gem.homepage = "http://github.com/diegosuarez/aesctr-ruby"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{TODO: AES in counter mode for ruby}
+  gem.description = "La descripcion del resumen ya dice lo que hay :)"
   gem.email = "diego.suargarcia@gmail.com"
-  gem.authors = ["Diego suarez"]
+  gem.authors = ["Diego Suarez"]
   # dependencies defined in Gemfile
 end
 Jeweler::RubygemsDotOrgTasks.new
@@ -32,13 +32,13 @@ Rake::TestTask.new(:test) do |test|
   test.verbose = true
 end
 
-require 'rcov/rcovtask'
-Rcov::RcovTask.new do |test|
-  test.libs << 'test'
-  test.pattern = 'test/**/test_*.rb'
-  test.verbose = true
-  test.rcov_opts << '--exclude "gems/*"'
-end
+#require 'rcov'
+#Rcov::RcovTask.new do |test|
+#  test.libs << 'test'
+#  test.pattern = 'test/**/test_*.rb'
+#  test.verbose = true
+#  test.rcov_opts << '--exclude "gems/*"'
+#end
 
 task :default => :test
 

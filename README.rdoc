@@ -1,16 +1,20 @@
 = aesctr-ruby
 
-Description goes here.
+Aunque puede que se deba a lo torpe que soy, tras mucho buscar no he encontrado ninguna implementacion del cifrado AES-CTR (modo contador) en Ruby. Hay dos implementaciones de referencia en Javascript y PHP escritas por Chris Veness (http://www.movable-type.co.uk/scripts/aes.html), y hay al menos otro port que yo conozca a ActionScript, pero faltaba un port en Ruby.
 
-== Contributing to aesctr-ruby
- 
-* Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet.
-* Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it.
-* Fork the project.
-* Start a feature/bugfix branch.
-* Commit and push until you are happy with your contribution.
-* Make sure to add tests for it. This is important so I don't break it in a future version unintentionally.
-* Please try not to mess with the Rakefile, version, or history. If you want to have your own version, or is otherwise necessary, that is fine, but please isolate to its own commit so I can cherry-pick around it.
+Personalmente, decidi hacer el port en vez de usar otra de las implementaciones de AES por la sencilla razon de que necesitaba interoperabilidad con servicios web que utilizaban la implementacion de PHP citada.
+
+==Uso==
+Simple:
+
+	require 'aesctr-ruby'
+	plain= "Hola mundo del cifrado!"
+	pass = "contrasena"
+	puts "Cadena original:"+plain
+	puts "Contrasena:"+pass
+	puts "Cadena cifrada y descifrada: "+AesCtr.decrypt(AesCtr.encrypt(plain, pass, 256), pass, 256)
+
+Dos funciones principales, AesCtr.crypt y AesCtr.decrypt. Los parametros son el texto, la contraseña de cifrado, y el numero de bits a usar (128|192|256). "encrypt" devuelve cifrado el texto (y codificado en base64 para evitar problemas) y decrypt toma el texto cifrado (en base64 tb) y devuelve el original.
 
 == Copyright
 
